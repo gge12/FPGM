@@ -386,12 +386,12 @@ def main(snapshot_path):
     writer.close()
 
 if __name__ == '__main__':
-    snapshot_path = "/polyp_{}_{}labeled/".format('unimatch_freq_prior_matchingnorm_gamma=0.10', 140)
+    snapshot_path = "/polyp_{}_{}labeled/".format('FPGM_gamma=0.10', 140)
     if not os.path.exists(snapshot_path):
         os.makedirs(snapshot_path)
     logging.basicConfig(filename=snapshot_path+"/log.txt", level=logging.INFO, format='[%(asctime)s.%(msecs)03d] %(message)s', datefmt='%H:%M:%S')
     logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
     logging.info(str(args))
-    shutil.copy('/home/wth/My_codes/SSL_MIS_Exps/Freq_adaptive_modulation/poly_freq_prior.py', snapshot_path)
+    shutil.copy('/poly_freq_prior.py', snapshot_path)
     main(snapshot_path)
    
